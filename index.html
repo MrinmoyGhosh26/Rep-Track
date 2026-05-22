@@ -8,71 +8,73 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body style="background-color: #121318; color: #cbd5e1; font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; padding: 0; line-height: 1.6;">
+<body>
 
     <!-- Header Section -->
-    <header style="background-color: #1a1d24; border-bottom: 2px solid #ff6b35; padding: 20px 30px;">
-        <nav style="display: flex; justify-content: space-between; align-items: center; max-width: 1000px; margin: 0 auto;">
-            <strong style="color: #ff6b35; font-size: 24px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">RepTrack</strong>
-            <ul style="list-style-type: none; margin: 0; padding: 0; display: flex; gap: 24px;">
-                <li><a href="#hero" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px;">Home</a></li>
-                <li><a href="#about" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px;">Why Track?</a></li>
-                <li><a href="#features" style="color: #ffffff; text-decoration: none; font-weight: 600; font-size: 15px;">Features</a></li>
+    <header class="header-bar">
+        <nav class="nav-container">
+            <strong class="logo">RepTrack</strong>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">Why Track?</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
             </ul>
         </nav>
     </header>
 
-    <main style="max-width: 800px; margin: 0 auto; padding: 40px 20px;">
+    <main class="main-content">
         <!-- Hero Section -->
-        <section id="hero" style="background-color: #1a1d24; border-left: 4px solid #ff6b35; border-radius: 8px; padding: 40px; margin-bottom: 40px;">
-            <h1 style="color: #ffffff; font-size: 36px; font-weight: 800; margin-top: 0; margin-bottom: 20px; line-height: 1.2;">Track Every Rep. Own Every Set.</h1>
-            <p style="color: #cbd5e1; font-size: 16px; margin-top: 0; margin-bottom: 24px; line-height: 1.7;">
+        <section id="hero" class="section-card">
+            <h1 class="hero-title">Track Every Rep. Own Every Set.</h1>
+            <p class="hero-text">
                 RepTrack is a streamlined, focus-first workout logging tool built for lifters who prioritize consistency and strength. Save your routines, record your daily performance, and watch your progress unfold—no bloat, no distractions.
             </p>
-            <p style="margin-top: 0; margin-bottom: 30px;">
-                <a href="#features" style="display: inline-block; background-color: #ff6b35; color: #ffffff; padding: 12px 28px; text-decoration: none; font-weight: 700; border-radius: 6px; text-transform: uppercase; font-size: 14px; letter-spacing: 0.5px;">Explore Features</a>
+            <p class="hero-btn-container">
+                <a href="#features" class="cta-button">Explore Features</a>
             </p>
-            <img src="assets/images/hero-workout.jpg" alt="A gym floor with professional dumbbells and strength equipment, highlighting a focus on fitness and progression." width="600" style="display: block; max-width: 100%; height: auto; border-radius: 6px; border: 1px solid #2e323c;">
+            <img src="assets/images/hero-workout.jpg" alt="A gym floor with professional dumbbells and strength equipment, highlighting a focus on fitness and progression." width="600" class="hero-image">
         </section>
 
         <!-- About Section -->
-        <section id="about" style="background-color: #1a1d24; border-left: 4px solid #ff6b35; border-radius: 8px; padding: 40px; margin-bottom: 40px;">
-            <h2 style="color: #ff6b35; font-size: 28px; font-weight: 700; margin-top: 0; margin-bottom: 20px;">The Science of Progressive Overload</h2>
-            <p style="color: #cbd5e1; font-size: 16px; margin-top: 0; margin-bottom: 20px; line-height: 1.7;">
-                To build strength and muscle, your body requires a stimulus that increases over time. This principle is called <strong style="color: #ffffff;">progressive overload</strong>. By adding weight, performing an extra repetition, or perfecting your form, you force your muscles to adapt and grow.
+        <section id="about" class="section-card">
+            <h2 class="section-title">The Science of Progressive Overload</h2>
+            <p class="section-text">
+                To build strength and muscle, your body requires a stimulus that increases over time. This principle is called <strong>progressive overload</strong>. By adding weight, performing an extra repetition, or perfecting your form, you force your muscles to adapt and grow.
             </p>
-            <p style="color: #cbd5e1; font-size: 16px; margin-top: 0; margin-bottom: 0; line-height: 1.7;">
+            <p class="section-text">
                 RepTrack helps you capture every detail of your lift sessions so you can easily compare today's performance with last week's. Without tracking, you are guessing. With RepTrack, you are executing a plan.
             </p>
         </section>
 
         <!-- Features Section -->
-        <section id="features" style="background-color: #1a1d24; border-left: 4px solid #ff6b35; border-radius: 8px; padding: 40px; margin-bottom: 40px;">
-            <h2 style="color: #ff6b35; font-size: 28px; font-weight: 700; margin-top: 0; margin-bottom: 24px;">Built for Strength & Consistency</h2>
-            <ul style="list-style-type: none; padding: 0; margin: 0;">
-                <li style="background-color: #22252e; padding: 20px; margin-bottom: 16px; border-radius: 6px; border-left: 3px solid #ff6b35; color: #cbd5e1; font-size: 15px; line-height: 1.6;">
-                    <strong style="color: #ffffff; display: block; margin-bottom: 6px; font-size: 16px;">Effortless Logging:</strong> Log your active working sets, target weights, and completed reps in seconds while resting between sets.
+        <section id="features" class="section-card">
+            <h2 class="section-title">Built for Strength & Consistency</h2>
+            <ul class="feature-list">
+                <li class="feature-item">
+                    <strong>Effortless Logging:</strong> Log your active working sets, target weights, and completed reps in seconds while resting between sets.
                 </li>
-                <li style="background-color: #22252e; padding: 20px; margin-bottom: 16px; border-radius: 6px; border-left: 3px solid #ff6b35; color: #cbd5e1; font-size: 15px; line-height: 1.6;">
-                    <strong style="color: #ffffff; display: block; margin-bottom: 6px; font-size: 16px;">Custom Routines:</strong> Structure and save your personalized workout splits, whether you follow a Push/Pull/Legs program or a custom full-body routine.
+                <li class="feature-item">
+                    <strong>Custom Routines:</strong> Structure and save your personalized workout splits, whether you follow a Push/Pull/Legs program or a custom full-body routine.
                 </li>
-                <li style="background-color: #22252e; padding: 20px; margin-bottom: 16px; border-radius: 6px; border-left: 3px solid #ff6b35; color: #cbd5e1; font-size: 15px; line-height: 1.6;">
-                    <strong style="color: #ffffff; display: block; margin-bottom: 6px; font-size: 16px;">PR Spotlights:</strong> Automatically highlight your personal records (PRs) as you hit them, giving you immediate motivation to push your limits.
+                <li class="feature-item">
+                    <strong>PR Spotlights:</strong> Automatically highlight your personal records (PRs) as you hit them, giving you immediate motivation to push your limits.
                 </li>
-                <li style="background-color: #22252e; padding: 20px; margin-bottom: 0; border-radius: 6px; border-left: 3px solid #ff6b35; color: #cbd5e1; font-size: 15px; line-height: 1.6;">
-                    <strong style="color: #ffffff; display: block; margin-bottom: 6px; font-size: 16px;">Clean History:</strong> Review your past workouts through a structured, easy-to-read chronological feed.
+                <li class="feature-item">
+                    <strong>Clean History:</strong> Review your past workouts through a structured, easy-to-read chronological feed.
                 </li>
             </ul>
         </section>
     </main>
 
     <!-- Footer Section -->
-    <footer style="background-color: #101114; padding: 40px 20px; text-align: center; border-top: 2px solid #1a1d24; margin-top: 60px;">
-        <p style="color: #64748b; font-size: 14px; margin: 0 0 20px 0; line-height: 1.5;">&copy; 2026 RepTrack. Built for lifters, by lifters. All rights reserved.</p>
-        <ul style="list-style-type: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 24px;">
-            <li><a href="#" style="color: #ff6b35; text-decoration: none; font-size: 14px; font-weight: 600;">Privacy Policy</a></li>
-            <li><a href="#" style="color: #ff6b35; text-decoration: none; font-size: 14px; font-weight: 600;">Terms of Service</a></li>
+    <footer class="footer-bar">
+        <p class="footer-text">&copy; 2026 RepTrack. Built for lifters, by lifters. All rights reserved.</p>
+        <ul class="footer-menu">
+            <li><a href="#" class="footer-link">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link">Terms of Service</a></li>
         </ul>
     </footer>
 
