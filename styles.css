@@ -12,6 +12,23 @@
     --font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* Light Theme Variables Override */
+body.light-theme {
+    --bg-primary: #f8fafc;
+    --bg-card: #ffffff;
+    --bg-item: #f1f5f9;
+    --bg-footer: #e2e8f0;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+    --border-dark: #cbd5e1;
+}
+
+/* Smooth Theme Transitions */
+body, header, main, section, li, a, footer, button {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
 /* Global Styles & Reset */
 * {
     box-sizing: border-box;
@@ -54,6 +71,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
     gap: 24px;
 }
 
@@ -62,6 +80,26 @@ body {
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+    background-color: transparent;
+    color: var(--accent-orange);
+    border: 1.5px solid var(--accent-orange);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
+
+.theme-btn:hover {
+    background-color: var(--accent-orange);
+    color: var(--text-primary);
 }
 
 /* Main Container */
@@ -212,6 +250,43 @@ strong {
     font-weight: 600;
 }
 
+/* Latest Updates Container & Card Styles */
+#updates-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.update-card {
+    background-color: var(--bg-item);
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 3px solid var(--accent-orange);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Subtle, minimal highlights to match beginner-to-intermediate frontend style */
+.update-card:hover {
+    border-left-color: var(--text-primary);
+}
+
+.update-title {
+    color: var(--text-primary);
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-transform: capitalize;
+}
+
+.update-body {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.6;
+}
+
 /* ==========================================
    Responsive Design & Media Queries
    ========================================== */
@@ -228,7 +303,9 @@ strong {
     }
 
     .nav-menu {
-        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px 20px;
     }
 
     .main-content {
@@ -257,4 +334,9 @@ strong {
     .feature-item {
         padding: 16px;
     }
+
+    .update-card {
+        padding: 16px;
+    }
 }
+
