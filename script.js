@@ -42,21 +42,32 @@ async function fetchWorkoutUpdates() {
         // Clear existing static placeholder text/content
         container.innerHTML = '';
 
+        // Array of realistic workout updates to replace the default Latin placeholder text
+        const workoutDescriptions = [
+            'Smashed a high-intensity chest/tricep workout focusing on progressive overload with incline bench press and weighted dips. Felt strong and hit a new PR!',
+            'Completed a deep back/biceps session focusing on mind-muscle connection. Finished up with heavy barbell rows and strict hammer curls.',
+            'Surmounted a demanding leg day training session today. Pushed through squat working sets and finished with high-rep leg presses for maximum hypertrophy.',
+            'Dedicated today to a recovery/stretching day with active mobility work and light foam rolling to accelerate muscle repair and maintain joint health.'
+        ];
+
         // Dynamically create and append styled card elements for each fetched post
-        posts.forEach(post => {
+        posts.forEach((post, index) => {
             // Create the main card div
             const card = document.createElement('div');
             card.className = 'update-card';
 
-            // Create the card title
+            // Create the custom card title (e.g. "Workout Session #1")
             const title = document.createElement('h3');
             title.className = 'update-title';
-            title.textContent = post.title;
+            title.textContent = `Workout Session #${index + 1}`;
 
-            // Create the card body paragraph
+            // Create the custom fitness-themed card body paragraph
             const body = document.createElement('p');
             body.className = 'update-body';
-            body.textContent = post.body;
+            
+            // Map index to the workout descriptions list using modulo
+            const descriptionIndex = index % workoutDescriptions.length;
+            body.textContent = workoutDescriptions[descriptionIndex];
 
             // Append title and body to the card
             card.appendChild(title);
