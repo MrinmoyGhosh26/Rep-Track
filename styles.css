@@ -287,6 +287,98 @@ strong {
     line-height: 1.6;
 }
 
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    width: 100%;
+    background-color: var(--bg-item);
+    color: var(--text-primary);
+    border: 1.5px solid var(--border-dark);
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 15px;
+    font-family: var(--font-family);
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--accent-orange);
+}
+
+.form-select {
+    cursor: pointer;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-error {
+    display: block;
+    color: #ef4444;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 6px;
+    min-height: 18px;
+}
+
+.form-success {
+    background-color: var(--bg-item);
+    border-left: 4px solid #22c55e;
+    border-radius: 6px;
+    padding: 20px;
+    color: #22c55e;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.form-success p {
+    margin: 0;
+}
+
+.submit-btn {
+    background-color: var(--accent-orange);
+    color: #ffffff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.submit-btn:hover {
+    opacity: 0.88;
+}
+
 /* ==========================================
    Responsive Design & Media Queries
    ========================================== */
@@ -338,5 +430,15 @@ strong {
     .update-card {
         padding: 16px;
     }
-}
 
+    .form-input,
+    .form-select,
+    .form-textarea {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}

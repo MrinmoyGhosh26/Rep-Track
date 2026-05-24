@@ -22,6 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Fetch Latest Workout Updates (API)
     // ==========================================
     fetchWorkoutUpdates();
+
+    // ==========================================
+    // 3. Signup Form Validation
+    // ==========================================
+    const signupForm = document.getElementById('signup-form');
+    signupForm.addEventListener('submit', handleFormSubmit);
 });
 
 // Fetch and display latest entries from JSONPlaceholder API
@@ -83,4 +89,85 @@ async function fetchWorkoutUpdates() {
         // Display a clean, simple user-friendly error message in the DOM
         container.innerHTML = `<p style="color: #ef4444; font-weight: 600; margin: 0;">Could not load updates. Please check your internet connection and try again.</p>`;
     }
+}
+
+// ==========================================
+// Handle Signup Form Submission & Validation
+// ==========================================
+function handleFormSubmit(event) {
+    // Prevent the browser from submitting the form and reloading the page
+    event.preventDefault();
+
+    // Collect the current values from each form field
+    const name = document.getElementById('full-name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const goal = document.getElementById('fitness-goal').value;
+    const experience = document.getElementById('experience').value;
+    const message = document.getElementById('message').value.trim();
+
+    // Track whether the form has any errors
+    let isValid = true;
+
+    // --- Validate Full Name ---
+    if (name === '') {
+        showError('error-name', 'Please enter your full name.');
+        isValid = false;
+    } else {
+        clearError('error-name');
+    }
+
+    // --- Validate Email Address ---
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (email === '') {
+        showError('error-email', 'Please enter your email address.');
+        isValid = false;
+    } else if (!emailPattern.test(email)) {
+        showError('error-email', 'Please enter a valid email address (e.g. name@email.com).');
+        isValid = false;
+    } else {
+        clearError('error-email');
+    }
+
+    // --- Validate Fitness Goal ---
+    if (goal === '') {
+        showError('error-goal', 'Please select a fitness goal.');
+        isValid = false;
+    } else {
+        clearError('error-goal');
+    }
+
+    // --- Validate Workout Experience ---
+    if (experience === '') {
+        showError('error-experience', 'Please select your workout experience level.');
+        isValid = false;
+    } else {
+        clearError('error-experience');
+    }
+
+    // --- Validate Goal Details (minimum 20 characters) ---
+    if (message === '') {
+        showError('error-message', 'Please describe your fitness goals.');
+        isValid = false;
+    } else if (message.length < 20) {
+        showError('error-message', `Message is too short. Please add at least ${20 - message.length} more character(s).`);
+        isValid = false;
+    } else {
+        clearError('error-message');
+    }
+
+    // If all fields are valid, hide the form and show the success message
+    if (isValid) {
+        document.getElementById('signup-form').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+    }
+}
+
+// Helper: display an error message for a given field
+function showError(errorId, message) {
+    document.getElementById(errorId).textContent = message;
+}
+
+// Helper: clear an error message for a given field
+function clearError(errorId) {
+    document.getElementById(errorId).textContent = '';
 }

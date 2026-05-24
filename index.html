@@ -78,6 +78,64 @@
                 <!-- Dynamically loaded posts will render here -->
             </div>
         </section>
+
+        <!-- Signup Form Section -->
+        <section id="signup" class="section-card">
+            <h2 class="section-title">Join the RepTrack Community</h2>
+            <p class="section-text">Tell us about your fitness goals and we will help you get started on the right track.</p>
+
+            <form id="signup-form" novalidate>
+
+                <div class="form-group">
+                    <label for="full-name" class="form-label">Full Name</label>
+                    <input type="text" id="full-name" class="form-input" placeholder="e.g. Alex Johnson">
+                    <span class="form-error" id="error-name"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" class="form-input" placeholder="e.g. alex@email.com">
+                    <span class="form-error" id="error-email"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="fitness-goal" class="form-label">Fitness Goal</label>
+                    <select id="fitness-goal" class="form-select">
+                        <option value="">-- Select a goal --</option>
+                        <option value="build-muscle">Build Muscle</option>
+                        <option value="lose-weight">Lose Weight</option>
+                        <option value="improve-endurance">Improve Endurance</option>
+                        <option value="general-fitness">General Fitness</option>
+                    </select>
+                    <span class="form-error" id="error-goal"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="experience" class="form-label">Workout Experience</label>
+                    <select id="experience" class="form-select">
+                        <option value="">-- Select your level --</option>
+                        <option value="beginner">Beginner (0–1 years)</option>
+                        <option value="intermediate">Intermediate (1–3 years)</option>
+                        <option value="advanced">Advanced (3+ years)</option>
+                    </select>
+                    <span class="form-error" id="error-experience"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message" class="form-label">Goal Details</label>
+                    <textarea id="message" class="form-textarea" rows="4" placeholder="Tell us more about what you want to achieve (min. 20 characters)..."></textarea>
+                    <span class="form-error" id="error-message"></span>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+
+            </form>
+
+            <!-- Success message, shown after valid submission -->
+            <div id="form-success" class="form-success" style="display: none;">
+                <p>Thank you for joining RepTrack! We will be in touch soon. Keep lifting!</p>
+            </div>
+        </section>
     </main>
 
     <!-- Footer Section -->
